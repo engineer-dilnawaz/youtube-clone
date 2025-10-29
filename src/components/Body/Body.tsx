@@ -1,5 +1,11 @@
-const Body = () => {
-  return <div>Body</div>;
-};
+import { FilterButtons } from "../FilterButtons";
+import { VideoCardsContainer } from "../VideoCardsContainer";
 
-export default Body;
+export const Body = () => {
+  return (
+    <div className="flex-1 bg-amber-300">
+      <FilterButtons />
+      <VideoCardsContainer />
+    </div>
+  );
+};

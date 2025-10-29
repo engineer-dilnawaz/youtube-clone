@@ -1,5 +1,3 @@
-const VideoCardsContainer = () => {
+export const VideoCardsContainer = () => {
   return <div>VideoCardsContainer</div>;
 };
-
-export default VideoCardsContainer;

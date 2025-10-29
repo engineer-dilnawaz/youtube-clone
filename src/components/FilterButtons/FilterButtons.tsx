@@ -1,5 +1,3 @@
-const FilterButtons = () => {
+export const FilterButtons = () => {
   return <div>FilterButtons</div>;
 };
-
-export default FilterButtons;
