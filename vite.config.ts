@@ -6,5 +6,17 @@ import react from "@vitejs/plugin-react-swc";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), svgr()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    svgr({
+      svgrOptions: {
+        icon: true,
+        replaceAttrValues: {
+          "#000": "currentColor",
+          "#000000": "currentColor",
+        },
+      },
+    }),
+  ],
 });

@@ -1,3 +1,3 @@
-import YoutubeLogo from "./youtube-logo.svg";
+import YouTubeLogoFull from "./youtube-logo-full.svg?react";
 
-export { YoutubeLogo as Logo };
+export { YouTubeLogoFull as YouTubeLogo };
