@@ -1,3 +1,13 @@
+import { useFeed } from "../../hooks/useFeed";
+import { VideoCard } from "../VideoCard/VideoCard";
+
 export const VideoCardsContainer = () => {
-  return <div>VideoCardsContainer</div>;
+  const { data } = useFeed();
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {data?.items.map((item) => (
+        <VideoCard key={item.id} video={item} />
+      ))}
+    </div>
+  );
 };

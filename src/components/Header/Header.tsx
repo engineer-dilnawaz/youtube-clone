@@ -1,6 +1,8 @@
 import { AiOutlinePlus } from "react-icons/ai";
 import { IoMenu, IoSearch } from "react-icons/io5";
 import { MdOutlineMicNone } from "react-icons/md";
+import { FiUser } from "react-icons/fi";
+
 import { YouTubeLogo } from "../../assets/svgs";
 import { FiBell } from "react-icons/fi";
 
@@ -10,7 +12,7 @@ export const Header = () => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
-    <div className="text-white px-5 bg-black flex flex-1 items-center py-2">
+    <div className="text-white px-5 bg-black flex flex-1 items-center py-2 sticky top-0 z-50">
       <div className="flex items-center gap-5">
         <IoMenu className="h-6 w-6 text-white cursor-pointer" />
         <YouTubeLogo className="h-10 w-32 cursor-pointer text-white" />
@@ -53,8 +55,12 @@ export const Header = () => {
             <AiOutlinePlus className="h-6 w-6 text-white" />
             <span className="text-sm font-semibold text-white">Create</span>
           </div>
-          <div>
+          <div className="w-10 h-10 rounded-full bg-gray-400/30 hover:bg-gray-400/40 cursor-pointer flex items-center justify-center">
             <FiBell className="h-6 w-6 text-white" />
+          </div>
+
+          <div className="w-10 h-10 rounded-full bg-gray-400/30 hover:bg-gray-400/40 cursor-pointer flex items-center justify-center">
+            <FiUser className="h-6 w-6 text-white" />
           </div>
         </div>
       </div>
