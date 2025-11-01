@@ -1,11 +1,16 @@
 import { AiOutlineLike } from "react-icons/ai";
-import { BsClock, BsCollectionPlay, BsInfoSquare } from "react-icons/bs";
+import {
+  BsClock,
+  BsCollectionPlay,
+  BsCollectionPlayFill,
+  BsInfoSquare,
+} from "react-icons/bs";
 import { CgPlayList } from "react-icons/cg";
 import { FaRegNewspaper, FaYoutube } from "react-icons/fa";
 import { GoHistory, GoTrophy } from "react-icons/go";
 import { HiOutlineCog6Tooth } from "react-icons/hi2";
 import { IoHelpCircleOutline } from "react-icons/io5";
-import { MdHome } from "react-icons/md";
+import { MdHome, MdOutlineHome } from "react-icons/md";
 import { PiMusicNote } from "react-icons/pi";
 import { RiVideoLine } from "react-icons/ri";
 import {
@@ -16,8 +21,26 @@ import {
   SiYoutubestudio,
 } from "react-icons/si";
 import { TbFlag } from "react-icons/tb";
+import { FaRegCircleUser, FaCircleUser } from "react-icons/fa6";
 
 import { EN_LOCALE } from "./en";
+
+export const COLLAPSED_SIDEBAR_ITEMS = [
+  { icon: MdOutlineHome, label: EN_LOCALE.HOME, path: "/", activeIcon: MdHome },
+  { icon: SiYoutubeshorts, label: EN_LOCALE.SHORTS, path: "/shorts" },
+  {
+    icon: BsCollectionPlay,
+    label: EN_LOCALE.SUBSCRIPTIONS,
+    path: "/subscriptions",
+    activeIcon: BsCollectionPlayFill,
+  },
+  {
+    icon: FaRegCircleUser,
+    label: EN_LOCALE.YOU,
+    path: "/you",
+    activeIcon: FaCircleUser,
+  },
+];
 
 // 🏠 Primary navigation
 export const MAIN_SIDEBAR_ITEMS = [
@@ -86,6 +109,7 @@ export const FOOTER_ITEMS_MORE = [
 
 // 🌐 Export grouped constants
 export const SIDEBAR_CONSTANTS = {
+  COLLAPSED_SIDEBAR_ITEMS,
   MAIN_SIDEBAR_ITEMS,
   YOUR_SECTION_ITEMS,
   EXPLORE_SECTION_ITEMS,

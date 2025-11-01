@@ -2,13 +2,18 @@ import { FaListUl } from "react-icons/fa";
 import { GoChevronRight } from "react-icons/go";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 
-import { SIDEBAR_CONSTANTS } from "~/constants";
 import { IconLabelVerticalList } from "~/components/IconLabelVerticalList";
+import { SIDEBAR_CONSTANTS } from "~/constants";
+import { useAppSelector } from "~/hooks";
+import { TabList } from "../TabList";
+import { useHelper } from "~/hooks";
 
 export const Sidebar = () => {
+  const { sideBarState } = useAppSelector((state) => state.config);
   const isExpanded = true;
-
+  const { isNotHomePage } = useHelper();
   const {
+    COLLAPSED_SIDEBAR_ITEMS,
     MAIN_SIDEBAR_ITEMS,
     YOUR_SECTION_ITEMS,
     EXPLORE_SECTION_ITEMS,
@@ -17,6 +22,18 @@ export const Sidebar = () => {
     FOOTER_ITEMS,
     FOOTER_ITEMS_MORE,
   } = SIDEBAR_CONSTANTS;
+
+  if (sideBarState === "hidden" || isNotHomePage) {
+    return null;
+  }
+
+  if (sideBarState === "collapsed") {
+    return (
+      <div className="bg-black text-white px-4 py-2 max-h-full overflow-y-scroll scrollbar-hide overscroll-none">
+        <TabList dataList={COLLAPSED_SIDEBAR_ITEMS} />
+      </div>
+    );
+  }
 
   return (
     <div className="bg-black text-white px-4 py-2 w-[15%] max-h-full overflow-y-scroll scrollbar-hide overscroll-none pb-20">

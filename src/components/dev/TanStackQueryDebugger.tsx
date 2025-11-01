@@ -14,7 +14,7 @@ export const TanStackQueryDebugger: FC<TanStackQueryDebuggerProps> = ({
     <>
       {children}
       <button
-        className="bg-black text-white p-4 rounded-full fixed bottom-4 right-4 z-50"
+        className="bg-slate-800 text-white p-4 rounded-full fixed bottom-4 right-4 z-50"
         onClick={() => setIsQueryDevtoolsOpen(!isQueryDevtoolsOpen)}
       >
         {isQueryDevtoolsOpen ? (

@@ -31,4 +31,5 @@ export const EN_LOCALE = {
   YOUTUBE_STUDIO: "YouTube Studio",
   YOUTUBE_KIDS: "YouTube Kids",
   REPORT_HISTORY: "Report history",
+  YOU: "You",
 };

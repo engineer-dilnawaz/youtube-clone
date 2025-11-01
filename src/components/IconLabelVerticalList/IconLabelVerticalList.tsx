@@ -1,10 +1,11 @@
 import { GoChevronRight } from "react-icons/go";
-import { Link, useLocation } from "react-router";
+import { Link } from "react-router";
+import { useHelper } from "~/hooks";
 
-import type { IconLabelVerticalListType } from "~/types";
+import type { SidebarItemType } from "~/types";
 
 type IconLabelVerticalListProps = {
-  dataList: IconLabelVerticalListType[];
+  dataList: SidebarItemType[];
   title?: string;
 };
 
@@ -12,16 +13,9 @@ export const IconLabelVerticalList = ({
   dataList,
   title,
 }: IconLabelVerticalListProps) => {
-  const { pathname } = useLocation();
-  const currentPath = pathname.toLowerCase();
+  const { isCurrentPageActive } = useHelper();
 
-  const isCurrentPageActive = (label: string) => {
-    const normalizedLabel = label.toLowerCase();
-    if (normalizedLabel === "home") return currentPath === "/";
-    return currentPath === `/${normalizedLabel}`;
-  };
-
-  const renderItem = (item: IconLabelVerticalListType) => {
+  const renderItem = (item: SidebarItemType) => {
     const isActive = isCurrentPageActive(item.label);
 
     const LinkComponent = item.path ? Link : ("div" as const);

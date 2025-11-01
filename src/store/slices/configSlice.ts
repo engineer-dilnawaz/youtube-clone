@@ -1,16 +1,25 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+
+type ConfigState = {
+  sideBarState: "collapsed" | "expanded" | "hidden";
+};
+
+const initialConfigState: ConfigState = {
+  sideBarState: "expanded", // collapsed, expanded, hidden
+};
 
 const configSlice = createSlice({
   name: "config",
-  initialState: {
-    isSidebarOpen: false,
-  },
+  initialState: initialConfigState,
   reducers: {
-    setIsSidebarOpen: (state, action) => {
-      state.isSidebarOpen = action.payload;
+    setSideBarState: (
+      state,
+      action: PayloadAction<"collapsed" | "expanded" | "hidden">
+    ) => {
+      state.sideBarState = action.payload;
     },
   },
 });
 
-export const { setIsSidebarOpen } = configSlice.actions;
+export const { setSideBarState } = configSlice.actions;
 export default configSlice.reducer;

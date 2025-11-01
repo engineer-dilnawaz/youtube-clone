@@ -8,14 +8,31 @@ import { FiBell } from "react-icons/fi";
 
 import { useState } from "react";
 import { Link } from "react-router";
+import { useAppDispatch, useAppSelector } from "~/hooks";
+import { setSideBarState } from "~/store/slices";
 
 export const Header = () => {
   const [isFocused, setIsFocused] = useState(false);
+  const { sideBarState } = useAppSelector((state) => state.config);
+  const dispatch = useAppDispatch();
+
+  const handleMenuClick = () => {
+    if (sideBarState === "collapsed") {
+      dispatch(setSideBarState("expanded"));
+    } else if (sideBarState === "expanded") {
+      dispatch(setSideBarState("collapsed"));
+    }
+  };
 
   return (
     <div className="text-white px-5 bg-black flex flex-1 items-center py-2 sticky top-0 z-50">
       <div className="flex items-center gap-5">
-        <IoMenu className="h-6 w-6 text-white cursor-pointer" />
+        <button
+          onClick={handleMenuClick}
+          className="hover:bg-gray-400/30 hover:cursor-pointer rounded-full p-2.5"
+        >
+          <IoMenu className="h-6 w-6 text-white cursor-pointer" />
+        </button>
         <Link to="/">
           <YouTubeLogo className="h-10 w-32 cursor-pointer text-white" />
         </Link>

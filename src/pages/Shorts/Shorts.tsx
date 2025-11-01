@@ -1,3 +1,3 @@
 export const Shorts = () => {
-  return <div>Shorts</div>;
+  return <div className="bg-black text-white w-screen h-screen">Shorts</div>;
 };
