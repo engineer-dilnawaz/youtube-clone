@@ -2,6 +2,7 @@ import { FaListUl } from "react-icons/fa";
 import { GoChevronRight } from "react-icons/go";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 import { SIDEBAR_CONSTANTS } from "../../constants";
+import { IconLabelVerticalList } from "../IconLabelVerticalList";
 
 export const Sidebar = () => {
   const isExpanded = true;
@@ -18,35 +19,8 @@ export const Sidebar = () => {
 
   return (
     <div className="bg-black text-white px-4 py-2 w-[15%] max-h-full overflow-y-scroll scrollbar-hide overscroll-none">
-      <div className="flex flex-col gap-2 border-b border-gray-400/30 pb-4">
-        {MAIN_SIDEBAR_ITEMS.map((item) => (
-          <div
-            key={item.label}
-            className="flex items-center gap-1 hover:bg-gray-400/30 hover:cursor-pointer rounded-lg p-2"
-          >
-            <item.icon className="h-6 w-6" />
-            <span className="font-medium pt-1 text-sm">{item.label}</span>
-          </div>
-        ))}
-      </div>
-
-      <div className="flex flex-col gap-2 pt-4">
-        <div className="flex items-center gap-2 hover:bg-gray-400/30 hover:cursor-pointer rounded-lg p-2">
-          <span className="font-medium pt-1 text-sm">You</span>
-          <GoChevronRight className="h-[16px] w-[16px] self-center mt-1.5" />
-        </div>
-        <div className="flex flex-col gap-2 border-b border-gray-400/30 pb-4">
-          {YOUR_SECTION_ITEMS.map((item) => (
-            <div
-              key={item.label}
-              className="flex items-center gap-2 hover:bg-gray-400/30 hover:cursor-pointer rounded-lg p-2"
-            >
-              <item.icon className="h-6 w-6" />
-              <span className="font-medium text-sm">{item.label}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+      <IconLabelVerticalList dataList={MAIN_SIDEBAR_ITEMS} />
+      <IconLabelVerticalList dataList={YOUR_SECTION_ITEMS} title="You" />
 
       <div className="flex flex-col gap-2 pt-4">
         <div className="flex items-center gap-2 hover:bg-gray-400/30 hover:cursor-pointer rounded-lg p-2">
@@ -72,43 +46,14 @@ export const Sidebar = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-2 pt-4 border-b border-gray-400/30 pb-4">
-        <p className="font-medium text-sm pl-2">Explore</p>
-        {EXPLORE_SECTION_ITEMS.map((item) => (
-          <div
-            key={item.label}
-            className="flex items-center gap-2 hover:bg-gray-400/30 hover:cursor-pointer rounded-lg p-2"
-          >
-            <item.icon className="h-6 w-6" />
-            <span className="font-medium text-sm">{item.label}</span>
-          </div>
-        ))}
-      </div>
+      <IconLabelVerticalList dataList={EXPLORE_SECTION_ITEMS} title="Explore" />
 
-      <div className="flex flex-col gap-2 pt-4 border-b border-gray-400/30 pb-2">
-        <p className="font-medium text-sm pl-2">More from YouTube</p>
-        {MORE_FROM_YOUTUBE_ITEMS.map((item) => (
-          <div
-            key={item.label}
-            className="flex items-center gap-2 hover:bg-gray-400/30 hover:cursor-pointer rounded-lg p-2"
-          >
-            <item.icon className="h-5 w-5 text-red-500" />
-            <span className="font-medium text-sm">{item.label}</span>
-          </div>
-        ))}
-      </div>
+      <IconLabelVerticalList
+        dataList={MORE_FROM_YOUTUBE_ITEMS}
+        title="More from YouTube"
+      />
 
-      <div className="flex flex-col gap-2 pt-4 border-b border-gray-400/30 pb-2">
-        {SETTINGS_SECTION_ITEMS.map((item) => (
-          <div
-            key={item.label}
-            className="flex items-center gap-2 hover:bg-gray-400/30 hover:cursor-pointer rounded-lg p-2"
-          >
-            <item.icon className="h-6 w-6" />
-            <span className="font-medium text-sm capitalize">{item.label}</span>
-          </div>
-        ))}
-      </div>
+      <IconLabelVerticalList dataList={SETTINGS_SECTION_ITEMS} />
 
       <div className="flex flex-wrap  gap-0.5 pt-4 pb-2">
         {FOOTER_ITEMS.map((item) => (
