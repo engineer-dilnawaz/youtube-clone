@@ -1,6 +1,7 @@
 import { FaListUl } from "react-icons/fa";
 import { GoChevronRight } from "react-icons/go";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
+
 import { SIDEBAR_CONSTANTS } from "../../constants";
 import { IconLabelVerticalList } from "../IconLabelVerticalList";
 
@@ -18,7 +19,7 @@ export const Sidebar = () => {
   } = SIDEBAR_CONSTANTS;
 
   return (
-    <div className="bg-black text-white px-4 py-2 w-[15%] max-h-full overflow-y-scroll scrollbar-hide overscroll-none">
+    <div className="bg-black text-white px-4 py-2 w-[15%] max-h-full overflow-y-scroll scrollbar-hide overscroll-none pb-20">
       <IconLabelVerticalList dataList={MAIN_SIDEBAR_ITEMS} />
       <IconLabelVerticalList dataList={YOUR_SECTION_ITEMS} title="You" />
 

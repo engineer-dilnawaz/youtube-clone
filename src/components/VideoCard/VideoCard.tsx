@@ -1,10 +1,15 @@
+import { Link } from "react-router";
+
 import type { FeedVideoType } from "../../types";
 import { formatCompactNumber } from "../../utils";
 import { dateFormatter } from "../../utils/dateFormatter";
 
 export const VideoCard = ({ video }: { video: FeedVideoType }) => {
   return (
-    <div className="flex flex-col bg-black rounded-lg shadow-md cursor-pointer h-auto hover:bg-blue-800/30 transition-all duration-300 p-3">
+    <Link
+      to={`/watch?v=${video.id}`}
+      className="flex flex-col bg-black rounded-lg shadow-md cursor-pointer h-auto hover:bg-blue-800/30 transition-all duration-300 p-3"
+    >
       <img
         src={video.snippet.thumbnails.high.url}
         alt={video.snippet.title}
@@ -25,6 +30,6 @@ export const VideoCard = ({ video }: { video: FeedVideoType }) => {
           {dateFormatter(video.snippet.publishedAt)}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };

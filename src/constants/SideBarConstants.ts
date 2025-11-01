@@ -21,9 +21,13 @@ import { EN_LOCALE } from "./en";
 
 // 🏠 Primary navigation
 export const MAIN_SIDEBAR_ITEMS = [
-  { icon: MdHome, label: EN_LOCALE.HOME },
-  { icon: SiYoutubeshorts, label: EN_LOCALE.SHORTS },
-  { icon: BsCollectionPlay, label: EN_LOCALE.SUBSCRIPTIONS },
+  { icon: MdHome, label: EN_LOCALE.HOME, path: "/" },
+  { icon: SiYoutubeshorts, label: EN_LOCALE.SHORTS, path: "/shorts" },
+  {
+    icon: BsCollectionPlay,
+    label: EN_LOCALE.SUBSCRIPTIONS,
+    path: "/subscriptions",
+  },
 ];
 
 // 👤 User-specific section
