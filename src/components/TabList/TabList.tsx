@@ -30,8 +30,10 @@ export const TabList = ({ dataList }: TabListProps) => {
   };
 
   return (
-    <div className="flex flex-col gap-0.5 justify-center items-center">
-      {dataList.map(renderItem)}
+    <div className="bg-black text-white px-4 py-2 max-h-full overflow-y-scroll scrollbar-hide overscroll-none">
+      <div className="flex flex-col gap-0.5 justify-center items-center">
+        {dataList.map(renderItem)}
+      </div>
     </div>
   );
 };

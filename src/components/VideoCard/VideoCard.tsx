@@ -1,13 +1,23 @@
-import { Link } from "react-router";
+import { useNavigate } from "react-router";
+import { useAppDispatch } from "~/hooks";
+import { setSideBarState } from "~/store/slices";
 
 import type { FeedVideoType } from "~/types";
 import { formatCompactNumber } from "~/utils";
 import { dateFormatter } from "~/utils/dateFormatter";
 
 export const VideoCard = ({ video }: { video: FeedVideoType }) => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/watch?v=${video.id}`);
+    dispatch(setSideBarState("hidden"));
+  };
+
   return (
-    <Link
-      to={`/watch?v=${video.id}`}
+    <button
+      onClick={handleClick}
       className="flex flex-col bg-black rounded-lg shadow-md cursor-pointer h-auto hover:bg-blue-800/30 transition-all duration-300 p-3"
     >
       <img
@@ -30,6 +40,6 @@ export const VideoCard = ({ video }: { video: FeedVideoType }) => {
           {dateFormatter(video.snippet.publishedAt)}
         </p>
       </div>
-    </Link>
+    </button>
   );
 };

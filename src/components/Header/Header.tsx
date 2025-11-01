@@ -9,7 +9,7 @@ import { FiBell } from "react-icons/fi";
 import { useState } from "react";
 import { Link } from "react-router";
 import { useAppDispatch, useAppSelector } from "~/hooks";
-import { setSideBarState } from "~/store/slices";
+import { setShowFloatingSidebar, setSideBarState } from "~/store/slices";
 
 export const Header = () => {
   const [isFocused, setIsFocused] = useState(false);
@@ -21,6 +21,8 @@ export const Header = () => {
       dispatch(setSideBarState("expanded"));
     } else if (sideBarState === "expanded") {
       dispatch(setSideBarState("collapsed"));
+    } else if (sideBarState === "hidden") {
+      dispatch(setShowFloatingSidebar(true));
     }
   };
 

@@ -16,7 +16,5 @@ export const useHelper = () => {
     return currentPath === `/${normalizedLabel}`;
   };
 
-  const isNotHomePage = currentPath !== "/";
-
-  return { isCurrentPageActive, isNotHomePage };
+  return { isCurrentPageActive };
 };
