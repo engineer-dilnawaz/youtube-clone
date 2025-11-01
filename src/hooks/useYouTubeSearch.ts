@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { fetchFromAPI } from "../api/youtube";
-import { API_ENDPOINTS } from "../constants";
-import type { GenericResponse, VideoType } from "../types";
+import { fetchFromAPI } from "~/api/youtube";
+import { API_ENDPOINTS } from "~/constants";
+import type { GenericResponse, VideoType } from "~/types";
 
 export const useYouTubeSearch = (query: string) => {
   return useQuery<GenericResponse<VideoType>>({

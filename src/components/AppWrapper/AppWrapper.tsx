@@ -1,15 +1,9 @@
-import { useSelector } from "react-redux";
-import { Outlet, useLocation } from "react-router";
+import { Outlet } from "react-router";
 
-import type { RootState } from "../../types/Redux";
-import { Header } from "../Header";
-import { Sidebar } from "../Sidebar";
+import { Header } from "~/components/Header";
+import { Sidebar } from "~/components/Sidebar";
 
 const AppWrapper = () => {
-  const { isSidebarOpen } = useSelector((state: RootState) => state.config);
-  const location = useLocation();
-
-  console.log(location);
   return (
     <>
       <Header />

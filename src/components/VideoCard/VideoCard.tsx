@@ -1,8 +1,8 @@
 import { Link } from "react-router";
 
-import type { FeedVideoType } from "../../types";
-import { formatCompactNumber } from "../../utils";
-import { dateFormatter } from "../../utils/dateFormatter";
+import type { FeedVideoType } from "~/types";
+import { formatCompactNumber } from "~/utils";
+import { dateFormatter } from "~/utils/dateFormatter";
 
 export const VideoCard = ({ video }: { video: FeedVideoType }) => {
   return (

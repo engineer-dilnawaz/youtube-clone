@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 
-import { TanStackQueryDebugger } from "./components/dev";
-import AppWrapper from "./components/AppWrapper/AppWrapper";
-import { Error, Home, Shorts, VideoDetail } from "./pages";
+import { TanStackQueryDebugger } from "~/components/dev";
+import AppWrapper from "~/components/AppWrapper/AppWrapper";
+import { Error, Home, Shorts, VideoDetail } from "~/pages";
 
 const App = () => {
   const router = createBrowserRouter([

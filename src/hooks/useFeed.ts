@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetchFromAPI } from "../api/youtube";
-import { API_ENDPOINTS, MAX_RESULTS } from "../constants";
-import type { FeedVideoType, GenericResponse } from "../types";
-import { REGION_CODES } from "../utils";
+import { fetchFromAPI } from "~/api/youtube";
+import { API_ENDPOINTS, MAX_RESULTS } from "~/constants";
+import type { FeedVideoType, GenericResponse } from "~/types";
+import { REGION_CODES } from "~/utils";
 
 export const useFeed = () => {
   return useQuery<GenericResponse<FeedVideoType>>({

@@ -1,5 +1,5 @@
-import { useFeed } from "../../hooks/useFeed";
-import { VideoCard } from "../VideoCard/VideoCard";
+import { useFeed } from "~/hooks";
+import { VideoCard } from "~/components/VideoCard/VideoCard";
 
 export const VideoCardsContainer = () => {
   const { data } = useFeed();

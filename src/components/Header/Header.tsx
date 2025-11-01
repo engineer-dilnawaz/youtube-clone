@@ -3,7 +3,7 @@ import { IoMenu, IoSearch } from "react-icons/io5";
 import { MdOutlineMicNone } from "react-icons/md";
 import { FiUser } from "react-icons/fi";
 
-import { YouTubeLogo } from "../../assets/svgs";
+import { YouTubeLogo } from "~/assets/svgs";
 import { FiBell } from "react-icons/fi";
 
 import { useState } from "react";

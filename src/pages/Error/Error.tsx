@@ -1,6 +1,6 @@
 import { CiSearch } from "react-icons/ci";
 
-import { YouTubeLogo } from "../../assets/svgs";
+import { YouTubeLogo } from "~/assets/svgs";
 import { Link } from "react-router";
 
 export const Error = () => {

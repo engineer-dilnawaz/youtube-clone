@@ -1,7 +1,7 @@
 import { GoChevronRight } from "react-icons/go";
 import { Link, useLocation } from "react-router";
 
-import type { IconLabelVerticalListType } from "../../types";
+import type { IconLabelVerticalListType } from "~/types";
 
 type IconLabelVerticalListProps = {
   dataList: IconLabelVerticalListType[];

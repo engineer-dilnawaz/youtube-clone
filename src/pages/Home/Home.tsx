@@ -1,4 +1,4 @@
-import { VideoCardsContainer } from "../../components";
+import { VideoCardsContainer } from "~/components";
 
 export const Home = () => {
   return (

@@ -2,8 +2,8 @@ import { FaListUl } from "react-icons/fa";
 import { GoChevronRight } from "react-icons/go";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 
-import { SIDEBAR_CONSTANTS } from "../../constants";
-import { IconLabelVerticalList } from "../IconLabelVerticalList";
+import { SIDEBAR_CONSTANTS } from "~/constants";
+import { IconLabelVerticalList } from "~/components/IconLabelVerticalList";
 
 export const Sidebar = () => {
   const isExpanded = true;
