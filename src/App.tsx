@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
-import { Body, VideoDetail } from "./components";
 
 import { TanStackQueryDebugger } from "./components/dev";
 import AppWrapper from "./components/AppWrapper/AppWrapper";
+import { Home, VideoDetail } from "./pages";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -12,7 +12,7 @@ const App = () => {
       children: [
         {
           index: true,
-          element: <Body />,
+          element: <Home />,
         },
         {
           path: "/video/:id",
