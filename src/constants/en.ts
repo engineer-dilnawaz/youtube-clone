@@ -32,4 +32,9 @@ export const EN_LOCALE = {
   YOUTUBE_KIDS: "YouTube Kids",
   REPORT_HISTORY: "Report history",
   YOU: "You",
+  SUBSCRIBER: "subscriber",
+  SUBSCRIBERS: "subscribers",
+  VIEWS: "views",
+  SHOW_LESS: "Show less",
+  SHOW_MORE: "...more",
 };

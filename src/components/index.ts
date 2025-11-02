@@ -7,3 +7,4 @@ export * from "./FilterButton";
 export * from "./AppWrapper";
 export * from "./IconLabelVerticalList";
 export * from "./LogoMenuContainer";
+export * from "./Description";
