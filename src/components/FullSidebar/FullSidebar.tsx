@@ -5,7 +5,11 @@ import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 import { SIDEBAR_CONSTANTS } from "~/constants";
 import { IconLabelVerticalList } from "../IconLabelVerticalList";
 
-export const FullSidebar = () => {
+type FullSidebarProps = {
+  onItemClickCallback?: () => void;
+};
+
+export const FullSidebar = ({ onItemClickCallback }: FullSidebarProps) => {
   const {
     MAIN_SIDEBAR_ITEMS,
     YOUR_SECTION_ITEMS,
@@ -20,8 +24,15 @@ export const FullSidebar = () => {
 
   return (
     <div className="bg-black text-white px-4 py-2 w-[15%] max-h-full overflow-y-scroll scrollbar-hide overscroll-none pb-20">
-      <IconLabelVerticalList dataList={MAIN_SIDEBAR_ITEMS} />
-      <IconLabelVerticalList dataList={YOUR_SECTION_ITEMS} title="You" />
+      <IconLabelVerticalList
+        dataList={MAIN_SIDEBAR_ITEMS}
+        onItemClickCallback={onItemClickCallback}
+      />
+      <IconLabelVerticalList
+        dataList={YOUR_SECTION_ITEMS}
+        title="You"
+        onItemClickCallback={onItemClickCallback}
+      />
 
       <div className="flex flex-col gap-2 pt-4">
         <div className="flex items-center gap-2 hover:bg-gray-400/30 hover:cursor-pointer rounded-lg p-2">
@@ -47,14 +58,22 @@ export const FullSidebar = () => {
         </div>
       </div>
 
-      <IconLabelVerticalList dataList={EXPLORE_SECTION_ITEMS} title="Explore" />
+      <IconLabelVerticalList
+        dataList={EXPLORE_SECTION_ITEMS}
+        title="Explore"
+        onItemClickCallback={onItemClickCallback}
+      />
 
       <IconLabelVerticalList
         dataList={MORE_FROM_YOUTUBE_ITEMS}
         title="More from YouTube"
+        onItemClickCallback={onItemClickCallback}
       />
 
-      <IconLabelVerticalList dataList={SETTINGS_SECTION_ITEMS} />
+      <IconLabelVerticalList
+        dataList={SETTINGS_SECTION_ITEMS}
+        onItemClickCallback={onItemClickCallback}
+      />
 
       <div className="flex flex-wrap  gap-0.5 pt-4 pb-2">
         {FOOTER_ITEMS.map((item) => (

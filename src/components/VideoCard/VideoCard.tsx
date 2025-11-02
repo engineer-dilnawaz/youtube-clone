@@ -25,13 +25,13 @@ export const VideoCard = ({ video }: { video: FeedVideoType }) => {
         alt={video.snippet.title}
         className="w-full h-48 object-cover"
       />
-      <div className="flex flex-col gap-1 p-2 text-white">
-        <h3 className="text-lg font-bold line-clamp-2">
+      <div className="flex flex-col items-start justify-start text-white">
+        <p className="text-lg font-bold line-clamp-2  self-start">
           {video.snippet.title}
-        </h3>
+        </p>
         <p className="text-sm text-gray-500">{video.snippet.channelTitle}</p>
       </div>
-      <div className="flex items-center gap-1 p-2 text-sm text-gray-500">
+      <div className="flex items-center gap-1 mt-1 text-sm text-gray-500">
         <p className="text-sm text-gray-500">
           {formatCompactNumber(video.statistics.viewCount)} views
         </p>

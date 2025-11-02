@@ -7,11 +7,13 @@ import type { SidebarItemType } from "~/types";
 type IconLabelVerticalListProps = {
   dataList: SidebarItemType[];
   title?: string;
+  onItemClickCallback?: () => void;
 };
 
 export const IconLabelVerticalList = ({
   dataList,
   title,
+  onItemClickCallback,
 }: IconLabelVerticalListProps) => {
   const { isCurrentPageActive } = useHelper();
 
@@ -20,8 +22,15 @@ export const IconLabelVerticalList = ({
 
     const LinkComponent = item.path ? Link : ("div" as const);
 
+    const handleClick = () => {
+      if (onItemClickCallback) {
+        onItemClickCallback();
+      }
+    };
+
     return (
       <LinkComponent
+        onClick={handleClick}
         to={item.path || ""}
         key={item.label}
         className={`flex items-center gap-2 rounded-lg p-2 hover:bg-gray-400/30 hover:cursor-pointer ${
