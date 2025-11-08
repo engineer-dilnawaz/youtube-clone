@@ -23,7 +23,7 @@ export const VideoDetail = () => {
       <div className="w-full aspect-video max-h-[65vh] bg-slate-500">
         <iframe
           className="w-full h-full bg-slate-600"
-          src={`https://www.youtube-nocookie.com/embed/${videoDetails?.id}?si=${videoDetails?.snippet.channelId}`}
+          src={`https://www.youtube-nocookie.com/embed/${videoDetails?.id}?si=${videoDetails?.snippet.channelId}&autoplay=1`}
           title={videoDetails?.snippet.title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share "
           referrerPolicy="strict-origin-when-cross-origin"
